@@ -101,10 +101,25 @@ nav {
 }
 
 .nav-links {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   gap: 18px;
   font-size: 0.95rem;
+}
+
+.nav-links.open {
+  display: flex;
+}
+
+.menu-toggle {
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--ink);
+  background: #fff;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(27, 26, 23, 0.12);
 }
 
 .nav-links a {
@@ -342,6 +357,13 @@ textarea {
   resize: vertical;
 }
 
+label {
+  display: grid;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
 @media (max-width: 720px) {
   .nav-inner {
     flex-direction: column;
@@ -350,5 +372,9 @@ textarea {
   .section-header {
     flex-direction: column;
     align-items: flex-start;
+  }
+  .nav-links {
+    width: 100%;
+    flex-direction: column;
   }
 }

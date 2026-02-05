@@ -24,7 +24,8 @@
           <img class="brand-logo" src="sunsprout-logo.jpg" alt="Sunsprout Labs logo" />
           Sunsprout Labs
         </a>
-        <div class="nav-links">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <div class="nav-links" id="site-nav">
           <a href="index.html" data-transition>Home</a>
           <a href="experiments.html" data-transition>Experiments</a>
           <a href="lab-content.html" data-transition>Lab Content</a>
@@ -39,12 +40,6 @@
     <main class="container">
       <section class="hero">
         <div class="hero-card fade-in">
-          <div class="sequence">
-            <span>Sun</span>
-            <span>Sprout</span>
-            <span>Almond</span>
-            <span>Flavour</span>
-          </div>
           <h1>Welcome to Sunsprout Labs</h1>
           <p>A living food experiment lab exploring the future of roasted snacking.</p>
           <p class="callout">Not built for quick selling. Built for experimentation.</p>
@@ -194,12 +189,13 @@
           </div>
           <div class="card">
             <h3>Quick Note</h3>
-            <form class="form-grid" action="https://formsubmit.co/sunsproutfoods@gmail.com" method="POST">
+            <form class="form-grid" action="https://formsubmit.co/sunsproutfoods@gmail.com" method="POST" enctype="multipart/form-data">
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="box" />
               <input type="hidden" name="_subject" value="Sunsprout Labs — New Submission" />
               <input type="text" name="name" placeholder="Name" required />
               <input type="email" name="email" placeholder="Email" required />
+              <input type="tel" name="phone" placeholder="Phone number" required />
               <select name="purpose" required>
                 <option value="">Purpose</option>
                 <option>Retail</option>

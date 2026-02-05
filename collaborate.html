@@ -24,7 +24,8 @@
           <img class="brand-logo" src="sunsprout-logo.jpg" alt="Sunsprout Labs logo" />
           Sunsprout Labs
         </a>
-        <div class="nav-links">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <div class="nav-links" id="site-nav">
           <a href="index.html" data-transition>Home</a>
           <a href="experiments.html" data-transition>Experiments</a>
           <a href="lab-content.html" data-transition>Lab Content</a>
@@ -52,6 +53,7 @@
               <li>Food enthusiasts and testers</li>
               <li>Designers and visual thinkers</li>
               <li>Chefs and culinary experimenters</li>
+              <li>Tech people and builders</li>
             </ul>
           </div>
           <div class="card">
@@ -79,14 +81,18 @@
           </div>
         </div>
         <div class="card">
-          <form class="form-grid" action="https://formsubmit.co/sunsproutfoods@gmail.com" method="POST">
+          <form class="form-grid" action="https://formsubmit.co/sunsproutfoods@gmail.com" method="POST" enctype="multipart/form-data">
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="box" />
               <input type="hidden" name="_subject" value="Sunsprout Labs — New Submission" />
             <input type="text" name="name" placeholder="Name" required />
             <input type="email" name="email" placeholder="Email" required />
+              <input type="tel" name="phone" placeholder="Phone number" required />
             <input type="text" name="role" placeholder="Role (creator, chef, designer, etc.)" required />
             <textarea name="idea" placeholder="Describe your idea" required></textarea>
+            <label>Optional CV (PDF/DOC)
+              <input type="file" name="cv" accept=".pdf,.doc,.docx" />
+            </label>
             <button class="button primary" type="submit">Send collaboration idea</button>
           </form>
         </div>

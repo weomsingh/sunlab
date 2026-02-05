@@ -11,6 +11,16 @@ navLinks.forEach((link) => {
   }
 });
 
+const menuToggle = document.querySelector('.menu-toggle');
+const navContainer = document.querySelector('.nav-links');
+
+if (menuToggle && navContainer) {
+  menuToggle.addEventListener('click', () => {
+    const isOpen = navContainer.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+}
+
 const transitionLinks = document.querySelectorAll('a[data-transition]');
 transitionLinks.forEach((link) => {
   link.addEventListener('click', (event) => {
