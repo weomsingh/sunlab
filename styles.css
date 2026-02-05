@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg: #f7f4ef;
+  --ink: #1b1a17;
+  --muted: #6c6a66;
+  --accent: #f06b2a;
+  --accent-2: #0b6a5b;
+  --accent-3: #c5b07a;
+  --card: #ffffff;
+  --line: rgba(27, 26, 23, 0.12);
+  --shadow: 0 22px 60px rgba(27, 26, 23, 0.15);
+  --radius: 18px;
+  --grid-gap: clamp(16px, 2vw, 28px);
+  --max: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  color: var(--ink);
+  background: radial-gradient(circle at top left, rgba(240, 107, 42, 0.14), transparent 55%),
+    radial-gradient(circle at 30% 20%, rgba(11, 106, 91, 0.12), transparent 45%),
+    linear-gradient(135deg, #f7f4ef 0%, #efe9df 100%);
+  min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(27, 26, 23, 0.08) 1px, transparent 0);
+  background-size: 28px 28px;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+main, header, footer {
+  position: relative;
+  z-index: 1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: clamp(20px, 4vw, 48px);
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(247, 244, 239, 0.85);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--line);
+  z-index: 10;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.brand-logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  object-fit: contain;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 20px rgba(27, 26, 23, 0.16);
+  padding: 4px;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-size: 0.95rem;
+}
+
+.nav-links a {
+  padding: 8px 12px;
+  border-radius: 999px;
+  transition: all 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background: rgba(27, 26, 23, 0.08);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--grid-gap);
+  align-items: center;
+  padding: clamp(40px, 8vw, 120px) 0;
+}
+
+.hero-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--line);
+  padding: clamp(24px, 4vw, 40px);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  margin: 0 0 16px;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.sequence {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+}
+
+.sequence span {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px dashed var(--line);
+  background: rgba(255, 255, 255, 0.7);
+  animation: glow 6s ease-in-out infinite;
+}
+
+.sequence span:nth-child(2) {
+  animation-delay: 0.8s;
+}
+
+.sequence span:nth-child(3) {
+  animation-delay: 1.6s;
+}
+
+.sequence span:nth-child(4) {
+  animation-delay: 2.4s;
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 0 rgba(240, 107, 42, 0.0);
+    transform: translateY(0);
+  }
+  50% {
+    box-shadow: 0 10px 30px rgba(240, 107, 42, 0.18);
+    transform: translateY(-4px);
+  }
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.button {
+  padding: 12px 20px;
+  border-radius: 999px;
+  border: 1px solid var(--ink);
+  font-weight: 600;
+  transition: transform 0.2s ease, background 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.button.primary {
+  background: var(--ink);
+  color: #fff;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.section {
+  padding: clamp(40px, 7vw, 96px) 0;
+}
+
+.section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+.section-header p {
+  max-width: 480px;
+  color: var(--muted);
+}
+
+.grid {
+  display: grid;
+  gap: var(--grid-gap);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24px;
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 30px rgba(27, 26, 23, 0.08);
+  transition: transform 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.taglist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(11, 106, 91, 0.08);
+  color: var(--accent-2);
+}
+
+.callout {
+  border-left: 4px solid var(--accent);
+  padding-left: 16px;
+  font-size: 1.05rem;
+}
+
+.panel {
+  background: rgba(11, 106, 91, 0.08);
+  border-radius: var(--radius);
+  padding: 20px;
+  border: 1px solid rgba(11, 106, 91, 0.2);
+}
+
+.list-clean {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 32px 0 56px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.fade-in:nth-child(2) { animation-delay: 0.1s; }
+.fade-in:nth-child(3) { animation-delay: 0.2s; }
+.fade-in:nth-child(4) { animation-delay: 0.3s; }
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-transition {
+  opacity: 0;
+  animation: pageIn 0.5s ease forwards;
+}
+
+@keyframes pageIn {
+  to { opacity: 1; }
+}
+
+.form-grid {
+  display: grid;
+  gap: 14px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  font-family: inherit;
+  background: #fff;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+@media (max-width: 720px) {
+  .nav-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
